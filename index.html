@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MetaLens - File Metadata Extractor</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                M
+            </div>
+
+            <div>
+                <h1>MetaLens</h1>
+                <p>File Metadata Inspector</p>
+            </div>
+
+        </div>
+
+        <span class="privacy">
+            Files stay in your browser
+        </span>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <span class="small-title">
+                FILE METADATA EXTRACTOR
+            </span>
+
+            <h2>
+                Discover what's hidden
+                <span>inside your files.</span>
+            </h2>
+
+            <p>
+                Upload an image or PDF and inspect its metadata
+                directly in your browser.
+            </p>
+
+        </section>
+
+
+        <section
+            class="upload-box"
+            id="dropArea"
+        >
+
+            <div class="upload-icon">
+                ↑
+            </div>
+
+            <h3>Drop your file here</h3>
+
+            <p>or select a file from your device</p>
+
+            <input
+                type="file"
+                id="fileInput"
+                accept="image/*,.pdf,application/pdf"
+            >
+
+            <button onclick="chooseFile()">
+                Choose File
+            </button>
+
+            <div class="supported">
+                Supports Images and PDF files
+            </div>
+
+        </section>
+
+
+        <section
+            id="resultSection"
+            class="results"
+        >
+
+            <div class="result-heading">
+
+                <div>
+                    <span class="small-title">
+                        ANALYSIS COMPLETE
+                    </span>
+
+                    <h2>File Metadata</h2>
+                </div>
+
+                <button
+                    class="another-button"
+                    onclick="resetApp()"
+                >
+                    Analyze Another File
+                </button>
+
+            </div>
+
+
+            <div class="file-card">
+
+                <div
+                    class="preview-area"
+                    id="previewArea"
+                ></div>
+
+                <div class="file-main">
+
+                    <span
+                        class="file-type"
+                        id="fileTypeLabel"
+                    >
+                    </span>
+
+                    <h2 id="fileName"></h2>
+
+                    <p id="fileSummary"></p>
+
+                </div>
+
+            </div>
+
+
+            <div class="metadata-grid">
+
+                <div class="metadata-card">
+
+                    <div class="card-title">
+
+                        <span class="card-icon">
+                            F
+                        </span>
+
+                        <div>
+                            <h3>File Information</h3>
+                            <p>Basic file properties</p>
+                        </div>
+
+                    </div>
+
+                    <div id="fileInfo"></div>
+
+                </div>
+
+
+                <div
+                    class="metadata-card"
+                    id="mediaCard"
+                >
+
+                    <div class="card-title">
+
+                        <span class="card-icon">
+                            I
+                        </span>
+
+                        <div>
+                            <h3 id="mediaTitle">
+                                Image Information
+                            </h3>
+
+                            <p id="mediaSubtitle">
+                                Image properties
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div id="mediaInfo"></div>
+
+                </div>
+
+
+                <div
+                    class="metadata-card"
+                    id="cameraCard"
+                >
+
+                    <div class="card-title">
+
+                        <span class="card-icon">
+                            C
+                        </span>
+
+                        <div>
+                            <h3>Camera Information</h3>
+                            <p>EXIF camera details</p>
+                        </div>
+
+                    </div>
+
+                    <div id="cameraInfo"></div>
+
+                </div>
+
+
+                <div
+                    class="metadata-card"
+                    id="locationCard"
+                >
+
+                    <div class="card-title">
+
+                        <span class="card-icon">
+                            G
+                        </span>
+
+                        <div>
+                            <h3>Location Data</h3>
+                            <p>GPS information from EXIF</p>
+                        </div>
+
+                    </div>
+
+                    <div id="locationInfo"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <h3>MetaLens</h3>
+
+        <p>
+            Metadata extraction happens locally in your browser.
+        </p>
+
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
