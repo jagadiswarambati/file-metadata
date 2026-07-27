@@ -51,7 +51,3 @@ A local development server such as VS Code Live Server can also be used.
 ## Privacy
 
 File processing happens inside the browser. The application does not upload files to a custom backend server.
-
-## Demo Screenshots
-
-Add project screenshots to the repository and include them in this section before submission.
